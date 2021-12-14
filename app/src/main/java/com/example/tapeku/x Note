@@ -1,0 +1,198 @@
+package com.example.tapeku;
+
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.example.tapeku.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+public class ProgressFragment extends Fragment {
+
+    public static final String TAG = "MyTag";
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+
+    DatabaseReference vD1;
+    DatabaseReference vD2;
+    DatabaseReference vD3;
+    DatabaseReference vD4;
+    DatabaseReference vD5;
+
+    Button buttonD1;
+    Button buttonD2;
+    Button buttonD3;
+    Button buttonD4;
+    Button buttonD5;
+
+    EditText valD1;
+    EditText valD2;
+    EditText valD3;
+    EditText valD4;
+    EditText valD5;
+
+    TextView D1;
+    TextView D2;
+    TextView D3;
+    TextView D4;
+    TextView D5;
+
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    // private static final String ARG_PARAM1 = "param1";
+    // private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    // private String mParam1;
+    // private String mParam2;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_progress, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
+
+        vD1 = databaseReference.child("HistoryTapeKu").child("Day1");
+        vD2 = databaseReference.child("HistoryTapeKu").child("Day2");
+        vD3 = databaseReference.child("HistoryTapeKu").child("Day3");
+        vD4 = databaseReference.child("HistoryTapeKu").child("Day4");
+        vD5 = databaseReference.child("HistoryTapeKu").child("Day5");
+
+        buttonD1 = view.findViewById(R.id.buttonD1);
+        buttonD2 = view.findViewById(R.id.buttonD2);
+        buttonD3 = view.findViewById(R.id.buttonD3);
+        buttonD4 = view.findViewById(R.id.buttonD4);
+        buttonD5 = view.findViewById(R.id.buttonD5);
+
+        valD1 = view.findViewById(R.id.textValD1);
+        valD2 = view.findViewById(R.id.textValD2);
+        valD3 = view.findViewById(R.id.textValD3);
+        valD4 = view.findViewById(R.id.textValD4);
+        valD5 = view.findViewById(R.id.textValD5);
+
+        D1 = view.findViewById(R.id.textResD1);
+        D2 = view.findViewById(R.id.textResD2);
+        D3 = view.findViewById(R.id.textResD3);
+        D4 = view.findViewById(R.id.textResD4);
+        D5 = view.findViewById(R.id.textResD5);
+
+        processdata();
+
+    }
+
+    private void processdata() {
+
+        buttonD1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String valueD1 = valD1.getText().toString();
+                vD1.setValue(valueD1);
+
+                vD1.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String valueD1 = snapshot.getValue().toString();
+                        D1.setText(valueD1);
+                    }
+                    @Override
+                    public void onCancelled (@NonNull DatabaseError error) {
+                    }
+                });
+            }});
+
+        buttonD2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String valueD5 = valD2.getText().toString();
+                vD2.setValue(valueD5);
+
+                vD2.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String valueD2 = snapshot.getValue().toString();
+                        D2.setText(valueD2);
+                    }
+                    @Override
+                    public void onCancelled (@NonNull DatabaseError error) {
+                    }
+                });
+            }});
+
+        buttonD3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String valueD5 = valD3.getText().toString();
+                vD3.setValue(valueD5);
+
+                vD3.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String valueD3 = snapshot.getValue().toString();
+                        D3.setText(valueD3);
+                    }
+                    @Override
+                    public void onCancelled (@NonNull DatabaseError error) {
+                    }
+                });
+            }});
+
+        buttonD4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String valueD4 = valD4.getText().toString();
+                vD4.setValue(valueD4);
+
+                vD4.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String valueD4 = snapshot.getValue().toString();
+                        D4.setText(valueD4);
+                    }
+                    @Override
+                    public void onCancelled (@NonNull DatabaseError error) {
+                    }
+                });
+            }});
+
+        buttonD5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String valueD5 = valD5.getText().toString();
+                vD5.setValue(valueD5);
+
+                vD5.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String valueD5 = snapshot.getValue().toString();
+                        D5.setText(valueD5);
+                    }
+                    @Override
+                    public void onCancelled (@NonNull DatabaseError error) {
+                    }
+                });
+            }});
+    }}

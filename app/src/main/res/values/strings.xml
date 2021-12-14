@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">TapeKu</string>
+    <string name="App">TapeKu</string>
+
+    <string name="splashBg">Background Splash Screen</string>
+    <string name="splashLogoapp">Logo App Splash Screen</string>
+    <string name="LogoPNJ">Logo PNJ</string>
+    <string name="Header">Header</string>
+    <string name="Body">Body</string>
+    <string name="Monitor">Monitor</string>
+    <string name="Control">Control</string>
+
+    <string name="Judul">Monitoring the Tape Fermentation Process</string>
+    <string name="Jihan">Jihan Shafira Adini 1803332020</string>
+    <string name="Wening">Wening Tyas Utami 1803332059</string>
+
+    <string name="Alkohol">Alcohol</string>
+    <string name="Suhu">Temperature and Humidity</string>
+
+    <string name="Persen">Your tape will taste best when the concentration of alcohol percentage reaches 6%.</string>
+    <string name="Celcius">Your tape will be in the best condition with the maximum temperature is 29 Degree Celsius.</string>
+    <string name="Notify">We will notify you when we reach that point.</string>
+    <string name="Check">You can check it regularly by clicking on the Button beside!</string>
+
+    <string name="Realtime">Monitor your tape condition in real-time here!</string>
+    <string name="Progress">Monitor your day-by-day tape progress here!</string>
+    <string name="Click">Click here to manually control the lamp in the storage, to adjust the temperature!</string>
+
+    <string name="Note">Note that your tape will be ready when the alcohol level reaches about 50%. To maintain the process, please keep the storage temperature at around 29 to 32 Degree Celsius. This whole process will take about three to five days, TapeKu will notify you when everything is ready!</string>
+    <string name="Info">With this TapeKu App, you can monitor your tape condition efficiently.</string>
+
+    <string name="HasilAlkohol">10</string>
+    <string name="HasilSuhu">x</string>
+    <string name="HasilLembab">x</string>
+
+    <string name="tabRealtime">Real-time</string>
+    <string name="tabProgress">Progress</string>
+</resources>
